@@ -1,32 +1,32 @@
 html = document.documentElement
 
 # Global namespace
-window.Heliom = {}
+window.App = {}
 
 # Touch
-Heliom.IS_TOUCH_DEVICE = window.ontouchend != undefined
+App.IS_TOUCH_DEVICE = window.ontouchend != undefined
 
 # Transitions
-Heliom.HAS_TRANSITIONS = false
+App.HAS_TRANSITIONS = false
 prefixes = ['webkit', 'Moz', 'Ms', 'O']
 for prefix in prefixes
   if html.style["#{prefix}Transition"] != undefined
     html.className += " #{prefix.toLowerCase()}"
-    Heliom.HAS_TRANSITIONS = true
-    Heliom.BROWSER = prefix.toLowerCase()
+    App.HAS_TRANSITIONS = true
+    App.BROWSER = prefix.toLowerCase()
 
 # SVG
-Heliom.HAS_SVG = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
+App.HAS_SVG = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
 
 # Retina
-Heliom.IS_RETINA = `('devicePixelRatio' in window && devicePixelRatio > 1) || ('matchMedia' in window && matchMedia("(min-resolution:144dpi)").matches)`
+App.IS_RETINA = `('devicePixelRatio' in window && devicePixelRatio > 1) || ('matchMedia' in window && matchMedia("(min-resolution:144dpi)").matches)`
 
 # HTML classes
 html.className = html.className.replace 'no-js', 'js'
-html.className += if Heliom.IS_TOUCH_DEVICE then ' touch' else ' no-touch'
-html.className += if Heliom.HAS_TRANSITIONS then ' transitions' else ' no-transitions'
-html.className += if Heliom.HAS_SVG then ' svg' else ' no-svg'
-html.className += if Heliom.IS_RETINA then ' retina' else ' no-retina'
+html.className += if App.IS_TOUCH_DEVICE then ' touch' else ' no-touch'
+html.className += if App.HAS_TRANSITIONS then ' transitions' else ' no-transitions'
+html.className += if App.HAS_SVG then ' svg' else ' no-svg'
+html.className += if App.IS_RETINA then ' retina' else ' no-retina'
 html.className += ' ios ipad'   if /\bipad\b/i.test navigator.userAgent
 html.className += ' ios iphone' if /\biphone\b/i.test navigator.userAgent
 if /safari/i.test navigator.userAgent
