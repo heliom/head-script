@@ -5,7 +5,7 @@ Our own tiny homemade Modernizr.
 
 ### Rails / Rack / Sprockets
 ```rb
-<%= javascript_include_tag "heliom" %>
+<%= javascript_include_tag "head_script" %>
 ```
 
 ### Sinatra
