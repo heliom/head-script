@@ -23,10 +23,10 @@ Heliom.IS_RETINA = `('devicePixelRatio' in window && devicePixelRatio > 1) || ('
 
 # HTML classes
 html.className = html.className.replace 'no-js', 'js'
-html.className += if Heliom.IS_TOUCH_DEVICE then ' touch' else ' non-touch'
-html.className += if Heliom.HAS_TRANSITIONS then ' has-transitions' else ''
-html.className += if Heliom.HAS_SVG then ' has-svg' else ''
-html.className += if Heliom.IS_RETINA then ' retina' else ''
+html.className += if Heliom.IS_TOUCH_DEVICE then ' touch' else ' no-touch'
+html.className += if Heliom.HAS_TRANSITIONS then ' transitions' else ' no-transitions'
+html.className += if Heliom.HAS_SVG then ' svg' else ' no-svg'
+html.className += if Heliom.IS_RETINA then ' retina' else ' no-retina'
 html.className += ' ios ipad'   if /\bipad\b/i.test navigator.userAgent
 html.className += ' ios iphone' if /\biphone\b/i.test navigator.userAgent
 if /safari/i.test navigator.userAgent
