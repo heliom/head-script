@@ -8,7 +8,7 @@ App.IS_TOUCH_DEVICE = window.ontouchend != undefined
 
 # Transitions
 App.HAS_TRANSITIONS = false
-prefixes = ['webkit', 'Moz', 'Ms', 'O']
+prefixes = ['Webkit', 'Moz', 'Ms', 'O', 'webkit', 'moz', 'ms', 'o']
 for prefix in prefixes
   if html.style["#{prefix}Transition"] != undefined
     html.className += " #{prefix.toLowerCase()}"
