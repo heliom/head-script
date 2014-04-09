@@ -35,5 +35,5 @@ if /safari/i.test navigator.userAgent
 html.className += ' firefox-3' if /firefox\/3/i.test navigator.userAgent
 
 # HTML5 Shiv
-for elem in ['article', 'aside', 'canvas', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'mark', 'menu', 'nav', 'section', 'summary', 'time']
+for elem in ['article', 'aside', 'canvas', 'details', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'main', 'mark', 'menu', 'nav', 'section', 'summary', 'time']
   document.createElement elem
